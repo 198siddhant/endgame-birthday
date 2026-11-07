@@ -9,9 +9,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,600&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 body {
   margin: 0;
@@ -30,9 +28,7 @@ body {
   align-items: center;
 }
 
-.page.active {
-  display: flex;
-}
+.page.active { display: flex; }
 
 h1 {
   font-family: 'Playfair Display', serif;
@@ -54,10 +50,6 @@ button {
   font-size: 16px;
   margin: 12px;
   cursor: pointer;
-}
-
-button:hover {
-  background: #843d34;
 }
 
 input {
@@ -116,9 +108,7 @@ input {
   font-size: 14px;
 }
 
-#wrong {
-  display: none;
-}
+#wrong { display: none; }
 
 #flame {
   font-size: 65px;
@@ -145,13 +135,8 @@ input {
 }
 
 @media (max-width: 400px) {
-  h1 {
-    font-size: 1.8rem;
-  }
-
-  .memory-grid {
-    gap: 10px;
-  }
+  h1 { font-size: 1.8rem; }
+  .memory-grid { gap: 10px; }
 }
 </style>
 </head>
@@ -160,7 +145,7 @@ input {
 
 <div id="confetti"></div>
 
-<!-- PAGE 1: PASSWORD -->
+<!-- PASSWORD PAGE -->
 <section class="page active" id="page1">
 
   <h1>A little surprise for you ❤️</h1>
@@ -172,25 +157,26 @@ input {
   <button onclick="checkPassword()">Unlock my surprise 💌</button>
 
   <div id="wrong">
+
     <img class="bear"
-    src="assets/2D23D207-1434-4C7E-A173-7B123B126104.gif"
+    src="assist/2D23D207-1434-4C7E-A173-7B123B126104.gif"
     alt="Angry bear">
 
     <h2>Wrong password 😡</h2>
 
     <button onclick="retry()">Try again 🐻</button>
+
   </div>
 
 </section>
 
-
-<!-- PAGE 2: BIRTHDAY -->
+<!-- BIRTHDAY PAGE -->
 <section class="page" id="page2">
 
   <h1>Happy Birthday, My Love! 🎂</h1>
 
   <img class="photo"
-  src="assets/IMG_1751.jpeg"
+  src="assist/IMG_1751.jpeg"
   alt="Anushka">
 
   <p>
@@ -206,8 +192,7 @@ input {
 
 </section>
 
-
-<!-- PAGE 3: MAKE A WISH -->
+<!-- CANDLE PAGE -->
 <section class="page" id="page3">
 
   <h1>Make a Wish, My Love 🎂</h1>
@@ -236,8 +221,7 @@ input {
 
 </section>
 
-
-<!-- PAGE 4: MEMORIES -->
+<!-- MEMORIES PAGE -->
 <section class="page" id="page4">
 
   <h1>Our Little World ❤️</h1>
@@ -247,22 +231,22 @@ input {
   <div class="memory-grid">
 
     <div class="memory">
-      <img src="assets/IMG_1528.jpeg" alt="Our first memory">
+      <img src="assist/IMG_1528.jpeg" alt="Our first memory">
       <p>One of my favourite moments ❤️</p>
     </div>
 
     <div class="memory">
-      <img src="assets/IMG_2770.jpeg" alt="Our second memory">
+      <img src="assist/IMG_2770.jpeg" alt="Our second memory">
       <p>My favourite person, always.</p>
     </div>
 
     <div class="memory">
-      <img src="assets/IMG_2865.jpeg" alt="Our third memory">
+      <img src="assist/IMG_2865.jpeg" alt="Our third memory">
       <p>Every moment with you is special.</p>
     </div>
 
     <div class="memory">
-      <img src="assets/IMG_2778.jpeg" alt="Our fourth memory">
+      <img src="assist/IMG_2778.jpeg" alt="Our fourth memory">
       <p>More memories, more love, forever.</p>
     </div>
 
@@ -272,8 +256,7 @@ input {
 
 </section>
 
-
-<!-- PAGE 5: FINAL LOVE LETTER -->
+<!-- FINAL LOVE LETTER -->
 <section class="page" id="page5">
 
   <h1>To My Birthday Girl ❤️</h1>
@@ -319,13 +302,12 @@ input {
   </div>
 
   <img class="bear"
-  src="assets/birthday-bears.jpeg.JPG"
+  src="assist/birthday-bears.jpeg.JPG"
   alt="Birthday bears">
 
   <h2>I love you, birthday girl! 🧸</h2>
 
 </section>
-
 
 <script>
 
@@ -346,13 +328,9 @@ function checkPassword() {
   const password = document.getElementById('password').value;
 
   if (password === '0919') {
-
     showPage(2);
-
   } else {
-
     document.getElementById('wrong').style.display = 'block';
-
   }
 
 }
