@@ -1,15 +1,17 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Happy Birthday, Anushka ❤️</title>
+<title>Happy Birthday, Baby ❤️</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,600&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
 body {
   margin: 0;
@@ -28,7 +30,9 @@ body {
   align-items: center;
 }
 
-.page.active { display: flex; }
+.page.active {
+  display: flex;
+}
 
 h1 {
   font-family: 'Playfair Display', serif;
@@ -108,7 +112,9 @@ input {
   font-size: 14px;
 }
 
-#wrong { display: none; }
+#wrong {
+  display: none;
+}
 
 #flame {
   font-size: 65px;
@@ -135,8 +141,13 @@ input {
 }
 
 @media (max-width: 400px) {
-  h1 { font-size: 1.8rem; }
-  .memory-grid { gap: 10px; }
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  .memory-grid {
+    gap: 10px;
+  }
 }
 </style>
 </head>
@@ -148,166 +159,176 @@ input {
 <!-- PASSWORD PAGE -->
 <section class="page active" id="page1">
 
-  <h1>A little surprise for you ❤️</h1>
+<h1>A little surprise for you ❤️</h1>
 
-  <p>Before we begin, enter our special date, my love.</p>
+<p>Before we begin, enter our special date, my love.</p>
 
-  <input id="password" type="password" placeholder="Enter the secret code">
+<!-- Birthday bears on password page -->
+<img class="bear"
+src="assist/birthday-bears.jpeg..JPG"
+alt="Birthday bears">
 
-  <button onclick="checkPassword()">Unlock my surprise 💌</button>
+<input id="password" type="password" placeholder="Enter the secret code">
 
-  <div id="wrong">
+<button onclick="checkPassword()">Unlock my surprise 💌</button>
 
-    <img class="bear"
-    src="assist/2D23D207-1434-4C7E-A173-7B123B126104.gif"
-    alt="Angry bear">
+<div id="wrong">
 
-    <h2>Wrong password 😡</h2>
+<img class="bear"
+src="assist/2D23D207-1434-4C7E-A173-7B123B126104.gif"
+alt="Angry bear">
 
-    <button onclick="retry()">Try again 🐻</button>
+<h2>Wrong password 😡</h2>
 
-  </div>
+<button onclick="retry()">Try again 🐻</button>
+
+</div>
 
 </section>
+
 
 <!-- BIRTHDAY PAGE -->
 <section class="page" id="page2">
 
-  <h1>Happy Birthday, My Love! 🎂</h1>
+<h1>Happy Birthday, Baby! 🎂</h1>
 
-  <img class="photo"
-  src="assist/IMG_1751.jpeg"
-  alt="Anushka">
+<img class="photo"
+src="assist/IMG_1751.jpeg"
+alt="Anushka">
 
-  <p>
-    I want to celebrate every birthday of yours by your side,
-    now as your boyfriend and someday as your husband.
-    You mean so much to me.
-    I want to keep you happy for the rest of my life.
-  </p>
+<p>
+I want to celebrate every birthday of yours by your side,
+now as your boyfriend and someday as your husband.
+You mean so much to me. I want to keep you happy
+for the rest of my life.
+</p>
 
-  <p>Today is all about you, my beautiful girl. ❤️</p>
+<p>
+Today is all about you, my beautiful girl. ❤️
+</p>
 
-  <button onclick="showPage(3)">Continue, birthday girl →</button>
+<button onclick="showPage(3)">Continue, birthday girl →</button>
 
 </section>
+
 
 <!-- CANDLE PAGE -->
 <section class="page" id="page3">
 
-  <h1>Make a Wish, My Love 🎂</h1>
+<h1>Make a Wish, My Love 🎂</h1>
 
-  <p>Close your eyes and make your sweetest birthday wish.</p>
+<p>Close your eyes and make your sweetest birthday wish.</p>
 
-  <div id="flame">🕯️</div>
+<div id="flame">🕯️</div>
 
-  <p>Take a deep breath and blow out your candle!</p>
+<p>Take a deep breath and blow out your candle!</p>
 
-  <button onclick="blowCandle()">Blow out the candle 💨</button>
+<button onclick="blowCandle()">Blow out the candle 💨</button>
 
-  <div id="wishMessage" style="display:none">
+<div id="wishMessage" style="display:none">
 
-    <h2>Yay! 🎉</h2>
+<h2>Yay! 🎉</h2>
 
-    <p>
-      I hope every wish of yours comes true.
-      And I hope I get to celebrate every birthday
-      with you, forever. ❤️
-    </p>
+<p>
+I hope every wish of yours comes true.
+And I hope I get to celebrate every birthday with you, forever. ❤️
+</p>
 
-    <button onclick="showPage(4)">Our memories →</button>
+<button onclick="showPage(4)">Our memories →</button>
 
-  </div>
+</div>
 
 </section>
+
 
 <!-- MEMORIES PAGE -->
 <section class="page" id="page4">
 
-  <h1>Our Little World ❤️</h1>
+<h1>Our Little World ❤️</h1>
 
-  <p>Every moment with you becomes a memory I want to keep forever.</p>
+<p>Every moment with you becomes a memory I want to keep forever.</p>
 
-  <div class="memory-grid">
+<div class="memory-grid">
 
-    <div class="memory">
-      <img src="assist/IMG_1528.jpeg" alt="Our first memory">
-      <p>One of my favourite moments ❤️</p>
-    </div>
+<div class="memory">
+<img src="assist/IMG_1528.jpeg" alt="Our first memory">
+<p>One of my favourite moments ❤️</p>
+</div>
 
-    <div class="memory">
-      <img src="assist/IMG_2770.jpeg" alt="Our second memory">
-      <p>My favourite person, always.</p>
-    </div>
+<div class="memory">
+<img src="assist/IMG_2770.jpeg" alt="Our second memory">
+<p>My favourite person, always.</p>
+</div>
 
-    <div class="memory">
-      <img src="assist/IMG_2865.jpeg" alt="Our third memory">
-      <p>Every moment with you is special.</p>
-    </div>
+<div class="memory">
+<img src="assist/IMG_2865.jpeg" alt="Our third memory">
+<p>Every moment with you is special.</p>
+</div>
 
-    <div class="memory">
-      <img src="assist/IMG_2778.jpeg" alt="Our fourth memory">
-      <p>More memories, more love, forever.</p>
-    </div>
+<div class="memory">
+<img src="assist/IMG_2778.jpeg" alt="Our fourth memory">
+<p>More memories, more love, forever.</p>
+</div>
 
-  </div>
+</div>
 
-  <button onclick="showPage(5)">One last thing, my love 💌</button>
+<button onclick="showPage(5)">One last thing, my love 💌</button>
 
 </section>
+
 
 <!-- FINAL LOVE LETTER -->
 <section class="page" id="page5">
 
-  <h1>To My Birthday Girl ❤️</h1>
+<h1>To My Birthday Girl ❤️</h1>
 
-  <div class="letter">
+<div class="letter">
 
-    My beautiful Anushka,
+My beautiful Anushka,<br><br>
 
-    <br><br>
+Simply the best thing that has ever happened in my life is you.<br><br>
 
-    Simply the best thing that has ever happened in my life is you.
+You showed me how beautiful love can be.
+I'm so fucking grateful to have you in my life.<br><br>
 
-    <br><br>
+I want to do everything I can to keep you happy,
+make you smile, and remind you every day
+how special you are to me.<br><br>
 
-    You showed me how beautiful love can be.
-    I'm so fucking grateful to have you in my life.
+No matter how many birthdays come and go,
+I want to be right beside you,
+celebrating every little thing that makes you happy.<br><br>
 
-    <br><br>
+You’re the Arc Reactor to my heart,
+the reason it keeps beating with so much love.
+I’d go back in time, just like Steve Rogers,
+not to change the past, but to stay with you
+and live every moment of the life we were always meant to have.
+You’re the lightning to my Stormbreaker,
+the Natasha to my Hulk,
+and my Wanda in a universe full of chaos.
+No matter how many timelines, universes,
+or battles the world throws at us,
+you’ll always be my Baby—
+the one I’d choose in every single reality. ❤️<br><br>
 
-    I want to do everything I can to keep you happy,
-    make you smile, and remind you every day
-    how special you are to me.
+Happy Birthday, my Baby.
+You mean the world to me.<br><br>
 
-    <br><br>
+Forever yours,<br>
+Your favourite person ❤️
 
-    No matter how many birthdays come and go,
-    I want to be right beside you,
-    celebrating every little thing that makes you happy.
+</div>
 
-    <br><br>
+<!-- Birthday bears on final page -->
+<img class="bear"
+src="assist/birthday-bears.jpeg..JPG"
+alt="Birthday bears">
 
-    Happy Birthday, my Endgame.
-    You mean the world to me.
-
-    <br><br>
-
-    Forever yours,
-
-    <br>
-
-    Your favourite person ❤️
-
-  </div>
-
-  <img class="bear"
-  src="assist/birthday-bears.jpeg.JPG"
-  alt="Birthday bears">
-
-  <h2>I love you, birthday girl! 🧸</h2>
+<h2>I love you so much gu khayi 😚🫂❤️❤️❤️</h2>
 
 </section>
+
 
 <script>
 
@@ -320,7 +341,6 @@ function showPage(number) {
   document.getElementById('page' + number).classList.add('active');
 
   window.scrollTo(0, 0);
-
 }
 
 function checkPassword() {
@@ -332,7 +352,6 @@ function checkPassword() {
   } else {
     document.getElementById('wrong').style.display = 'block';
   }
-
 }
 
 function retry() {
@@ -340,7 +359,6 @@ function retry() {
   document.getElementById('password').value = '';
 
   document.getElementById('wrong').style.display = 'none';
-
 }
 
 function blowCandle() {
@@ -350,7 +368,6 @@ function blowCandle() {
   document.getElementById('wishMessage').style.display = 'block';
 
   createConfetti();
-
 }
 
 function createConfetti() {
@@ -372,9 +389,7 @@ function createConfetti() {
     setTimeout(function() {
       piece.remove();
     }, 3000);
-
   }
-
 }
 
 </script>
