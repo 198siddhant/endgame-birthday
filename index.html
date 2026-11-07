@@ -1,621 +1,401 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For My Endgame ❤️</title>
 
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Nunito:wght@400;700;800&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
+<title>Happy Birthday, Anushka ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,600&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
-*{box-sizing:border-box}
-
-:root{
-  --cream:#fff9ed;
-  --brown:#59352b;
-  --pink:#f58e9d;
-  --peach:#f7c6ad;
+* {
+  box-sizing: border-box;
 }
 
-body{
-  margin:0;
-  background:var(--cream);
-  color:var(--brown);
-  font-family:Nunito,sans-serif;
-  overflow-x:hidden;
+body {
+  margin: 0;
+  background: #fff0e6;
+  color: #683c32;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
 }
 
-.page{
-  display:none;
-  min-height:100vh;
-  padding:25px 15px;
-  align-items:center;
-  justify-content:center;
+.page {
+  display: none;
+  min-height: 100vh;
+  padding: 35px 20px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.page.active{display:flex}
-
-.card{
-  width:100%;
-  max-width:650px;
-  background:#fffdf6;
-  border:2px solid #e8c8b4;
-  border-radius:25px;
-  padding:25px;
-  text-align:center;
-  box-shadow:0 10px 30px #58372b20;
+.page.active {
+  display: flex;
 }
 
-h1,h2{
-  font-family:"DM Serif Display",serif;
-  font-weight:400;
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2rem;
+  color: #a65346;
 }
 
-h1{font-size:clamp(30px,8vw,48px)}
-
-p{line-height:1.8}
-
-button{
-  border:0;
-  border-radius:30px;
-  padding:13px 22px;
-  margin:8px;
-  font-weight:800;
-  font-size:16px;
-  background:var(--brown);
-  color:white;
-  cursor:pointer;
+p {
+  line-height: 1.8;
+  max-width: 500px;
 }
 
-.pink{
-  background:var(--pink);
-  color:var(--brown);
+button {
+  background: #a65346;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 13px 25px;
+  font-size: 16px;
+  margin: 12px;
+  cursor: pointer;
 }
 
-.decor{
-  position:fixed;
-  font-size:28px;
-  pointer-events:none;
-  animation:float 4s infinite ease-in-out;
+button:hover {
+  background: #843d34;
 }
 
-@keyframes float{
-  50%{transform:translateY(-12px) rotate(8deg)}
+input {
+  padding: 14px;
+  border: 2px solid #d9a69b;
+  border-radius: 25px;
+  text-align: center;
+  font-size: 18px;
+  width: 220px;
 }
 
-.keypad{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:10px;
-  max-width:260px;
-  margin:20px auto;
+.photo {
+  max-width: 90%;
+  max-height: 55vh;
+  object-fit: contain;
+  border-radius: 18px;
+  margin: 15px;
 }
 
-.key{
-  background:#fff1e6;
-  color:var(--brown);
-  border:2px solid #e8b8a5;
-  border-radius:15px;
-  padding:15px;
+.bear {
+  width: 220px;
+  max-width: 85%;
+  object-fit: contain;
+  margin: 15px;
 }
 
-.dots{
-  font-size:25px;
-  letter-spacing:8px;
-  margin:15px;
+.memory-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  width: 100%;
+  max-width: 500px;
 }
 
-#error{
-  display:none;
-  background:#fff0f0;
-  border:2px dashed #ef6a70;
-  border-radius:15px;
-  padding:15px;
-  margin:15px auto;
+.memory {
+  background: white;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px #d6b6a8;
+  transform: rotate(-2deg);
 }
 
-#error img{
-  width:120px;
-  display:block;
-  margin:auto;
+.memory:nth-child(even) {
+  transform: rotate(2deg);
 }
 
-.photo{
-  width:min(100%,350px);
-  background:white;
-  padding:12px 12px 35px;
-  margin:20px auto;
-  box-shadow:0 8px 20px #4b2c2220;
-  transform:rotate(-2deg);
+.memory img {
+  width: 100%;
+  max-height: 250px;
+  object-fit: contain;
+  background: #fff8f3;
 }
 
-.photo img{
-  width:100%;
-  height:auto;
-  display:block;
+.memory p {
+  font-family: 'Playfair Display', serif;
+  font-size: 14px;
 }
 
-.message{
-  text-align:left;
-  background:#fff8ed;
-  border-radius:18px;
-  padding:20px;
-  border:1px dashed #e5b9a2;
-  line-height:1.8;
+#wrong {
+  display: none;
 }
 
-.hand{
-  font-family:Caveat,cursive;
-  font-size:25px;
+#flame {
+  font-size: 65px;
+  transition: 0.3s;
 }
 
-.cake{
-  font-size:85px;
-  position:relative;
-  margin:35px auto;
-  width:180px;
+.letter {
+  background: #fffaf5;
+  border: 1px solid #e9c9b8;
+  border-radius: 15px;
+  padding: 25px;
+  max-width: 500px;
+  line-height: 2;
+  box-shadow: 0 8px 25px #e2c4b7;
 }
 
-.candle{
-  position:absolute;
-  left:50%;
-  top:-35px;
-  transform:translateX(-50%);
-  width:15px;
-  height:55px;
-  background:repeating-linear-gradient(
-    0deg,#74d8cf 0 10px,#fff 10px 16px
-  );
-  border-radius:5px;
+#confetti {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  pointer-events: none;
+  font-size: 25px;
 }
 
-.flame{
-  position:absolute;
-  top:-28px;
-  left:50%;
-  transform:translateX(-50%);
-  width:20px;
-  height:28px;
-  background:orange;
-  border-radius:50% 50% 50% 0;
-  animation:flicker .5s infinite alternate;
-}
+@media (max-width: 400px) {
+  h1 {
+    font-size: 1.8rem;
+  }
 
-@keyframes flicker{
-  to{transform:translateX(-50%) rotate(10deg) scale(.9)}
-}
-
-.out{display:none}
-
-.grid{
-  display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:15px;
-  margin:20px 0;
-}
-
-.polaroid{
-  background:white;
-  padding:8px 8px 20px;
-  box-shadow:0 5px 15px #58372b20;
-  transform:rotate(-2deg);
-  min-width:0;
-}
-
-.polaroid:nth-child(even){transform:rotate(2deg)}
-
-.polaroid img{
-  width:100%;
-  height:auto;
-  display:block;
-}
-
-.caption{
-  font-family:Caveat,cursive;
-  font-size:20px;
-  margin-top:8px;
-}
-
-.letter{
-  background:#fff9ee;
-  padding:25px;
-  text-align:left;
-  font-family:Caveat,cursive;
-  font-size:25px;
-  line-height:1.6;
-  border:1px solid #e7c9a8;
-}
-
-@media(min-width:650px){
-  .card{padding:40px}
+  .memory-grid {
+    gap: 10px;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<div class="decor" style="top:5%;left:5%">🌼</div>
-<div class="decor" style="top:10%;right:5%">💛</div>
-<div class="decor" style="bottom:8%;left:5%">⭐</div>
-<div class="decor" style="bottom:8%;right:5%">🌷</div>
+<div id="confetti"></div>
 
 <!-- PAGE 1: PASSWORD -->
+<section class="page active" id="page1">
 
-<section class="page active" id="password">
-<div class="card">
+  <h1>A little surprise for you ❤️</h1>
 
-<h1>A little surprise<br>for my Endgame 💗</h1>
+  <p>Before we begin, enter our special date, my love.</p>
 
-<p>Before you enter, unlock your birthday surprise!</p>
+  <input id="password" type="password" placeholder="Enter the secret code">
 
-<div class="dots" id="dots">○ ○ ○ ○</div>
+  <button onclick="checkPassword()">Unlock my surprise 💌</button>
 
-<div class="keypad">
+  <div id="wrong">
+    <img class="bear"
+    src="assets/2D23D207-1434-4C7E-A173-7B123B126104.gif"
+    alt="Angry bear">
 
-<button class="key" onclick="press('1')">1</button>
-<button class="key" onclick="press('2')">2</button>
-<button class="key" onclick="press('3')">3</button>
+    <h2>Wrong password 😡</h2>
 
-<button class="key" onclick="press('4')">4</button>
-<button class="key" onclick="press('5')">5</button>
-<button class="key" onclick="press('6')">6</button>
+    <button onclick="retry()">Try again 🐻</button>
+  </div>
 
-<button class="key" onclick="press('7')">7</button>
-<button class="key" onclick="press('8')">8</button>
-<button class="key" onclick="press('9')">9</button>
-
-<button class="key" onclick="clearPass()">⌫</button>
-<button class="key" onclick="press('0')">0</button>
-<button class="key" onclick="checkPass()">♡</button>
-
-</div>
-
-<div id="error">
-
-<img src="assets/angry-bear.gif" alt="Angry bear">
-
-<strong>Wrong password 😡</strong>
-
-<br>
-
-<button class="pink" onclick="retry()">Retry</button>
-
-</div>
-
-<p>Hint: a special date just for us 💌</p>
-
-<img src="assets/birthday-bears.jpeg"
-style="width:250px;max-width:100%;border-radius:15px"
-alt="Your birthday bears">
-
-</div>
 </section>
+
 
 <!-- PAGE 2: BIRTHDAY -->
+<section class="page" id="page2">
 
-<section class="page" id="birthday">
-<div class="card">
+  <h1>Happy Birthday, My Love! 🎂</h1>
 
-<h1>Happy Birthday, My Love! 🎂</h1>
+  <img class="photo"
+  src="assets/IMG_1751.jpeg"
+  alt="Anushka">
 
-<div class="photo">
-<img src="assets/anushka.jpeg" alt="Anushka">
-</div>
+  <p>
+    I want to celebrate every birthday of yours by your side,
+    now as your boyfriend and someday as your husband.
+    You mean so much to me.
+    I want to keep you happy for the rest of my life.
+  </p>
 
-<div class="message">
+  <p>Today is all about you, my beautiful girl. ❤️</p>
 
-<p class="hand" style="text-align:center">
-To my Endgame, my favorite person ❤️
-</p>
+  <button onclick="showPage(3)">Continue, birthday girl →</button>
 
-Happy birthday to my love. You are the best thing that has ever happened in my life.
-
-Thank you for always being there for me, understanding me more than anyone, and making my world brighter just by being in it.
-
-I want to celebrate every birthday of yours by your side, first as your boyfriend and someday as your husband.
-
-I promise to keep choosing you, loving you, and doing everything I can to keep you happy for the rest of my life.
-
-You’re the Arc Reactor to my heart, the lightning to my Stormbreaker, and the person I would go back in time for, just to spend a little more time with.
-
-In every universe, I’d still find my way back to you.
-
-Thank you for being you, baby. I love you more than words can ever explain.
-
-Here’s to all the birthdays, adventures, and beautiful moments we still have ahead of us. ❤️
-
-</div>
-
-<button class="pink" onclick="go('wish')">
-Make a wish with me 🕯️
-</button>
-
-</div>
 </section>
+
 
 <!-- PAGE 3: MAKE A WISH -->
+<section class="page" id="page3">
 
-<section class="page" id="wish">
-<div class="card">
+  <h1>Make a Wish, My Love 🎂</h1>
 
-<h1>Make a wish, baby ✨</h1>
+  <p>Close your eyes and make your sweetest birthday wish.</p>
 
-<p>Close your eyes and make your sweetest wish...</p>
+  <div id="flame">🕯️</div>
 
-<div class="cake">
+  <p>Take a deep breath and blow out your candle!</p>
 
-<div class="candle">
-<div class="flame" id="flame"></div>
-</div>
+  <button onclick="blowCandle()">Blow out the candle 💨</button>
 
-🎂
+  <div id="wishMessage" style="display:none">
 
-</div>
+    <h2>Yay! 🎉</h2>
 
-<p class="hand" id="wishText">
-Tap the candle to blow it out 💨
-</p>
+    <p>
+      I hope every wish of yours comes true.
+      And I hope I get to celebrate every birthday
+      with you, forever. ❤️
+    </p>
 
-<button id="blowButton" onclick="blowCandle()">
-Blow out the candle 💨
-</button>
+    <button onclick="showPage(4)">Our memories →</button>
 
-<div id="wishReveal" style="display:none">
+  </div>
 
-<h2>Your wish is on its way! 💫</h2>
-
-<p class="hand">
-May every wish of yours come true, my love.
-And if one of those wishes is me...
-I’m already yours. ❤️
-</p>
-
-<button class="pink" onclick="go('memories')">
-Our little memories 📸
-</button>
-
-</div>
-
-</div>
 </section>
+
 
 <!-- PAGE 4: MEMORIES -->
+<section class="page" id="page4">
 
-<section class="page" id="memories">
-<div class="card">
+  <h1>Our Little World ❤️</h1>
 
-<h1>Little moments, forever memories 💌</h1>
+  <p>Every moment with you becomes a memory I want to keep forever.</p>
 
-<p>Every moment with you is a memory I want to keep close.</p>
+  <div class="memory-grid">
 
-<div class="grid">
+    <div class="memory">
+      <img src="assets/IMG_1528.jpeg" alt="Our first memory">
+      <p>One of my favourite moments ❤️</p>
+    </div>
 
-<div class="polaroid">
-<img src="assets/memory1.jpeg" alt="Memory 1">
-<div class="caption">My favorite person ❤️</div>
-</div>
+    <div class="memory">
+      <img src="assets/IMG_2770.jpeg" alt="Our second memory">
+      <p>My favourite person, always.</p>
+    </div>
 
-<div class="polaroid">
-<img src="assets/memory2.jpeg" alt="Memory 2">
-<div class="caption">Our silly little moments</div>
-</div>
+    <div class="memory">
+      <img src="assets/IMG_2865.jpeg" alt="Our third memory">
+      <p>Every moment with you is special.</p>
+    </div>
 
-<div class="polaroid">
-<img src="assets/memory3.jpeg" alt="Memory 3">
-<div class="caption">Every moment with you</div>
-</div>
+    <div class="memory">
+      <img src="assets/IMG_2778.jpeg" alt="Our fourth memory">
+      <p>More memories, more love, forever.</p>
+    </div>
 
-<div class="polaroid">
-<img src="assets/memory4.jpeg" alt="Memory 4">
-<div class="caption">My favorite place is beside you</div>
-</div>
+  </div>
 
-</div>
+  <button onclick="showPage(5)">One last thing, my love 💌</button>
 
-<p class="hand">
-I cherish every laugh, every little conversation,
-every hug, and every ordinary day that becomes
-special because of you.
-</p>
-
-<button class="pink" onclick="go('letter')">
-One more thing... 💌
-</button>
-
-</div>
 </section>
+
 
 <!-- PAGE 5: FINAL LOVE LETTER -->
+<section class="page" id="page5">
 
-<section class="page" id="letter">
-<div class="card">
+  <h1>To My Birthday Girl ❤️</h1>
 
-<h1>A little letter for you 💗</h1>
+  <div class="letter">
 
-<div class="letter">
+    My beautiful Anushka,
 
-My dearest Endgame,
+    <br><br>
 
-<br><br>
+    Simply the best thing that has ever happened in my life is you.
 
-If I could give you one thing in this world,
-it would be the ability to see yourself through my eyes.
+    <br><br>
 
-Then you would understand how special, beautiful,
-and loved you truly are.
+    You showed me how beautiful love can be.
+    I'm so fucking grateful to have you in my life.
 
-<br><br>
+    <br><br>
 
-You have become my comfort, my happiness,
-and one of the most important parts of my life.
+    I want to do everything I can to keep you happy,
+    make you smile, and remind you every day
+    how special you are to me.
 
-I don’t promise that every day will be perfect,
-but I promise to keep showing up, listening,
-learning, and loving you through every season.
+    <br><br>
 
-<br><br>
+    No matter how many birthdays come and go,
+    I want to be right beside you,
+    celebrating every little thing that makes you happy.
 
-No matter how many timelines, universes,
-or lifetimes there are, my heart would still choose you.
+    <br><br>
 
-<br><br>
+    Happy Birthday, my Endgame.
+    You mean the world to me.
 
-Happy birthday, my love.
+    <br><br>
 
-I’m so lucky that my story has you in it.
+    Forever yours,
 
-<br><br>
+    <br>
 
-Forever yours,
+    Your favourite person ❤️
 
-Your boyfriend ❤️
+  </div>
 
-</div>
+  <img class="bear"
+  src="assets/birthday-bears.jpeg.JPG"
+  alt="Birthday bears">
 
-<img src="assets/birthday-bears.jpeg"
-style="width:220px;max-width:100%;margin-top:20px;border-radius:15px"
-alt="Birthday bears">
+  <h2>I love you, birthday girl! 🧸</h2>
 
-<p class="hand">
-Made with all my love, just for you.
-</p>
-
-<button onclick="go('password')">
-Replay your surprise ↻
-</button>
-
-</div>
 </section>
+
 
 <script>
 
-let password="";
-const correctPassword="0919";
+function showPage(number) {
 
-function updateDots(){
+  document.querySelectorAll('.page').forEach(function(page) {
+    page.classList.remove('active');
+  });
 
-document.getElementById("dots").textContent=
-["○","○","○","○"].map((x,i)=>
-i<password.length?"●":x).join(" ");
+  document.getElementById('page' + number).classList.add('active');
 
-}
-
-function press(number){
-
-if(password.length<4){
-
-password+=number;
-updateDots();
-
-if(password.length===4){
-setTimeout(checkPass,250);
-}
+  window.scrollTo(0, 0);
 
 }
 
-}
+function checkPassword() {
 
-function clearPass(){
+  const password = document.getElementById('password').value;
 
-password=password.slice(0,-1);
-updateDots();
+  if (password === '0919') {
 
-document.getElementById("error").style.display="none";
+    showPage(2);
 
-}
+  } else {
 
-function retry(){
+    document.getElementById('wrong').style.display = 'block';
 
-password="";
-updateDots();
-
-document.getElementById("error").style.display="none";
+  }
 
 }
 
-function checkPass(){
+function retry() {
 
-if(password===correctPassword){
+  document.getElementById('password').value = '';
 
-document.getElementById("error").style.display="none";
-
-go("birthday");
+  document.getElementById('wrong').style.display = 'none';
 
 }
 
-else if(password.length===4){
+function blowCandle() {
 
-document.getElementById("error").style.display="block";
+  document.getElementById('flame').innerHTML = '💨';
 
-password="";
-updateDots();
+  document.getElementById('wishMessage').style.display = 'block';
 
-}
-
-}
-
-function go(page){
-
-document.querySelectorAll(".page").forEach(
-p=>p.classList.remove("active")
-);
-
-document.getElementById(page).classList.add("active");
-
-window.scrollTo({
-top:0,
-behavior:"smooth"
-});
+  createConfetti();
 
 }
 
-function blowCandle(){
+function createConfetti() {
 
-document.getElementById("flame").classList.add("out");
+  const emojis = ['❤️', '💖', '🎉', '✨', '💕'];
 
-document.getElementById("wishText").textContent=
-"Your wish is on its way to the universe ✨";
+  for (let i = 0; i < 30; i++) {
 
-document.getElementById("blowButton").style.display="none";
+    const piece = document.createElement('span');
 
-document.getElementById("wishReveal").style.display="block";
+    piece.innerHTML = emojis[Math.floor(Math.random() * emojis.length)];
 
-confetti();
+    piece.style.position = 'fixed';
+    piece.style.left = Math.random() * 100 + 'vw';
+    piece.style.top = Math.random() * 100 + 'vh';
 
-}
+    document.getElementById('confetti').appendChild(piece);
 
-function confetti(){
+    setTimeout(function() {
+      piece.remove();
+    }, 3000);
 
-for(let i=0;i<35;i++){
-
-let element=document.createElement("div");
-
-element.textContent=["💗","✨","🎉","🌸"][
-Math.floor(Math.random()*4)
-];
-
-element.style.position="fixed";
-element.style.left=Math.random()*100+"vw";
-element.style.top="-30px";
-element.style.fontSize="25px";
-element.style.zIndex="100";
-
-element.style.transition=
-"transform 2.5s linear, top 2.5s linear";
-
-document.body.appendChild(element);
-
-requestAnimationFrame(()=>{
-
-element.style.top="110vh";
-element.style.transform="rotate(600deg)";
-
-});
-
-setTimeout(()=>element.remove(),2700);
-
-}
+  }
 
 }
 
